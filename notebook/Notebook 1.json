@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "98894698-c9c8-4a31-87f8-12ae182f4426"
+				"spark.autotune.trackingId": "3d4f6115-68cd-4d70-8b64-bb0570a1560d"
 			}
 		},
 		"metadata": {
@@ -56,7 +56,7 @@
 					"token_library = sc._jvm.com.microsoft.azure.synapse.tokenlibrary.TokenLibrary\n",
 					"storage_account_key = token_library.getSecret(\"rnk2-pipeline-kv\", \"GeospatialStorageAccountKey\", \"AOI Pipeline Key Vault\")"
 				],
-				"execution_count": 1
+				"execution_count": 3
 			}
 		]
 	}

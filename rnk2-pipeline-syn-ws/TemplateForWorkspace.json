@@ -342,9 +342,7 @@
 								"--storage_account_key_secret_name",
 								"GeospatialStorageAccountKey",
 								"--linked_service_name",
-								"AOI Pipeline Key Vault",
-								"--config_file_name",
-								"config-pool-geolocation.json"
+								"AOI Pipeline Key Vault"
 							],
 							"targetBigDataPool": {
 								"referenceName": "poolnwjd3h",
@@ -710,19 +708,24 @@
 				},
 				"parameters": {
 					"Prefix": {
-						"type": "string"
+						"type": "string",
+						"defaultValue": "rnk2"
 					},
 					"BatchName": {
-						"type": "string"
+						"type": "string",
+						"defaultValue": "stellarbatchdev"
 					},
 					"JobName": {
-						"type": "string"
+						"type": "string",
+						"defaultValue": "rnk2-custom-vision-model-job"
 					},
 					"BatchLocation": {
-						"type": "string"
+						"type": "string",
+						"defaultValue": "eastus"
 					},
 					"StorageAccountName": {
-						"type": "string"
+						"type": "string",
+						"defaultValue": "rawdatawtmria"
 					}
 				},
 				"variables": {
@@ -1375,7 +1378,7 @@
 						"spark.dynamicAllocation.enabled": "false",
 						"spark.dynamicAllocation.minExecutors": "2",
 						"spark.dynamicAllocation.maxExecutors": "2",
-						"spark.autotune.trackingId": "9926c2a9-464c-4239-a1ab-53b1456ea8c5"
+						"spark.autotune.trackingId": "3d4f6115-68cd-4d70-8b64-bb0570a1560d"
 					}
 				},
 				"metadata": {
@@ -1400,15 +1403,13 @@
 						"sparkVersion": "3.1",
 						"nodeCount": 3,
 						"cores": 8,
-						"memory": 56,
-						"automaticScaleJobs": false
+						"memory": 56
 					},
 					"sessionKeepAliveTimeout": 30
 				},
 				"cells": [
 					{
 						"cell_type": "code",
-						"metadata": {},
 						"source": [
 							"from pyspark.sql import SparkSession\n",
 							"sc = SparkSession.builder.getOrCreate()\n",
@@ -1416,7 +1417,7 @@
 							"storage_account_key = token_library.getSecret(\"rnk2-pipeline-kv\", \"GeospatialStorageAccountKey\", \"AOI Pipeline Key Vault\")"
 						],
 						"outputs": [],
-						"execution_count": 1
+						"execution_count": 3
 					}
 				]
 			},
@@ -1532,19 +1533,28 @@
 				"autoScale": {
 					"enabled": true,
 					"maxNodeCount": 5,
-					"minNodeCount": 1
+					"minNodeCount": 3
 				},
-				"nodeCount": 0,
+				"nodeCount": 3,
 				"nodeSize": "Medium",
 				"nodeSizeFamily": "MemoryOptimized",
 				"sparkVersion": "3.1",
 				"libraryRequirements": {
 					"content": "name: aoi-env\nchannels:\n  - conda-forge\n  - defaults\ndependencies:\n  - gdal=3.3.0\n  - pip>=20.1.1\n  - azure-storage-file-datalake\n  - libgdal\n  - shapely\n  - pyproj\n  - pip:\n    - rasterio\n    - geopandas\n",
 					"filename": "/home/ubuntu/azureglobal2/Azure-Orbital-Analytics-Samples/deploy/environment.yml",
-					"time": "2022-04-26T13:15:45.2432682Z"
+					"time": "2022-04-26T18:03:17.8253641Z"
 				},
 				"isComputeIsolationEnabled": false,
 				"sessionLevelPackagesEnabled": false,
+				"customLibraries": [
+					{
+						"name": "notebook-utils-1.0.16-SNAPSHOT.jar",
+						"path": "rnk2-pipeline-syn-ws/libraries/notebook-utils-1.0.16-SNAPSHOT.jar",
+						"containerName": "prep",
+						"uploadedTimestamp": "0001-01-01T00:00:00+00:00",
+						"type": "jar"
+					}
+				],
 				"annotations": []
 			},
 			"dependsOn": [],

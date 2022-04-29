@@ -2,14 +2,14 @@
     "name": "Copy noop",
     "properties": {
         "targetBigDataPool": {
-            "referenceName": "poolnwjd3h",
+            "referenceName": "pooll2lcit",
             "type": "BigDataPoolReference"
         },
         "requiredSparkVersion": "3.1",
         "language": "python",
         "jobProperties": {
             "name": "Copy noop",
-            "file": "abfss://spark-jobs@synhnsnwjd3h.dfs.core.windows.net/copy_noop/src/main.py",
+            "file": "abfss://spark-jobs@synhnsl2lcit.dfs.core.windows.net/copy_noop/src/main.py",
             "conf": {
                 "spark.dynamicAllocation.enabled": "false",
                 "spark.dynamicAllocation.minExecutors": "1",

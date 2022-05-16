@@ -5,7 +5,7 @@
         "annotations": [],
         "type": "AzureKeyVault",
         "typeProperties": {
-            "baseUrl": "https://lint-pipeline-kv.vault.azure.net/"
+            "baseUrl": "https://abc-pipeline-kv.vault.azure.net/"
         }
     }
 }

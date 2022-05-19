@@ -25,7 +25,7 @@
 		},
 		"AOI Batch_properties_typeProperties_batchUri": {
 			"type": "string",
-			"defaultValue": "https://knfforcbatchact.usgovvirginia.batch.azure.com"
+			"defaultValue": "https://knfforcbatchact.usgovvirginia.usgovcloudapi.net"
 		},
 		"AOI Batch_properties_typeProperties_poolName": {
 			"type": "string",
@@ -37,11 +37,11 @@
 		},
 		"AOI Geospatial v2_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://rawdatad5y43b.dfs.core.windows.net"
+			"defaultValue": "https://rawdatad5y43b.dfs.core.usgovcloudapi.net"
 		},
 		"AOI Pipeline Key Vault_properties_typeProperties_baseUrl": {
 			"type": "string",
-			"defaultValue": "https://knff-pipeline-kv.vault.azure.net/"
+			"defaultValue": "https://knff-pipeline-kv.vault.usgovcloudapi.net/"
 		},
 		"knff-pipeline-syn-ws-WorkspaceDefaultStorage_properties_typeProperties_url": {
 			"type": "string",
@@ -75,7 +75,7 @@
 								"referenceName": "Transforms",
 								"type": "SparkJobDefinitionReference"
 							},
-							"file": "abfss://spark-jobs@synhnsbh6em7.dfs.core.windows.net/customvision_transform/src/main.py",
+							"file": "abfss://spark-jobs@synhnsbh6em7.dfs.core.usgovcloudapi.net/customvision_transform/src/main.py",
 							"args": [
 								"--storage_account_name",
 								"@pipeline().parameters.StorageAccountName",
@@ -184,7 +184,7 @@
 									"userProperties": [],
 									"typeProperties": {
 										"url": {
-											"value": "@concat('https://',pipeline().parameters.BatchName,'.',pipeline().parameters.BatchLocation,'.batch.azure.com/jobs/',pipeline().parameters.JobName,'/tasks/aoi-cv-task-', pipeline().RunId, '?api-version=2022-01-01.15.0')",
+											"value": "@concat('https://',pipeline().parameters.BatchName,'.',pipeline().parameters.BatchLocation,'.usgovcloudapi.net/jobs/',pipeline().parameters.JobName,'/tasks/aoi-cv-task-', pipeline().RunId, '?api-version=2022-01-01.15.0')",
 											"type": "Expression"
 										},
 										"connectVia": {
@@ -270,7 +270,7 @@
 						"userProperties": [],
 						"typeProperties": {
 							"url": {
-								"value": "@concat('https://',pipeline().parameters.BatchName,'.',pipeline().parameters.BatchLocation,'.batch.azure.com/jobs/',pipeline().parameters.JobName,'/tasks?api-version=2020-03-01.11.0')",
+								"value": "@concat('https://',pipeline().parameters.BatchName,'.',pipeline().parameters.BatchLocation,'.usgovcloudapi.net/jobs/',pipeline().parameters.JobName,'/tasks?api-version=2020-03-01.11.0')",
 								"type": "Expression"
 							},
 							"connectVia": {
@@ -321,7 +321,7 @@
 								"referenceName": "Pool Geolocation",
 								"type": "SparkJobDefinitionReference"
 							},
-							"file": "abfss://spark-jobs@synhnsbh6em7.dfs.core.windows.net/pool_geolocation/src/main.py",
+							"file": "abfss://spark-jobs@synhnsbh6em7.dfs.core.usgovcloudapi.net/pool_geolocation/src/main.py",
 							"args": [
 								"--storage_account_name",
 								"@pipeline().parameters.StorageAccountName",
@@ -373,7 +373,7 @@
 								"referenceName": "Copy noop",
 								"type": "SparkJobDefinitionReference"
 							},
-							"file": "abfss://spark-jobs@synhnsbh6em7.dfs.core.windows.net/copy_noop/src/main.py",
+							"file": "abfss://spark-jobs@synhnsbh6em7.dfs.core.usgovcloudapi.net/copy_noop/src/main.py",
 							"args": [
 								"--storage_account_name",
 								"@pipeline().parameters.StorageAccountName",
@@ -435,7 +435,7 @@
 								"referenceName": "Copy noop",
 								"type": "SparkJobDefinitionReference"
 							},
-							"file": "abfss://spark-jobs@synhnsbh6em7.dfs.core.windows.net/copy_noop/src/main.py",
+							"file": "abfss://spark-jobs@synhnsbh6em7.dfs.core.usgovcloudapi.net/copy_noop/src/main.py",
 							"args": [
 								"--storage_account_name",
 								"@pipeline().parameters.StorageAccountName",
@@ -661,7 +661,7 @@
 								"referenceName": "Copy noop",
 								"type": "SparkJobDefinitionReference"
 							},
-							"file": "abfss://spark-jobs@synhnsbh6em7.dfs.core.windows.net/copy_noop/src/main.py",
+							"file": "abfss://spark-jobs@synhnsbh6em7.dfs.core.usgovcloudapi.net/copy_noop/src/main.py",
 							"args": [
 								"--storage_account_name",
 								"@pipeline().parameters.StorageAccountName",
@@ -818,12 +818,10 @@
 				},
 				"parameters": {
 					"Prefix": {
-						"type": "string",
-						"defaultValue": "knfftest"
+						"type": "string"
 					},
 					"StorageAccountName": {
-						"type": "string",
-						"defaultValue": "rawdatad5y43b"
+						"type": "string"
 					},
 					"AOI": {
 						"type": "string"
@@ -1260,7 +1258,7 @@
 				"language": "python",
 				"jobProperties": {
 					"name": "Copy noop",
-					"file": "abfss://spark-jobs@synhnsbh6em7.dfs.core.windows.net/copy_noop/src/main.py",
+					"file": "abfss://spark-jobs@synhnsbh6em7.dfs.core.usgovcloudapi.net/copy_noop/src/main.py",
 					"conf": {
 						"spark.dynamicAllocation.enabled": "false",
 						"spark.dynamicAllocation.minExecutors": "1",
@@ -1292,7 +1290,7 @@
 				"language": "python",
 				"jobProperties": {
 					"name": "Pool Geolocation",
-					"file": "abfss://spark-jobs@synhnsbh6em7.dfs.core.windows.net/pool_geolocation/src/main.py",
+					"file": "abfss://spark-jobs@synhnsbh6em7.dfs.core.usgovcloudapi.net/pool_geolocation/src/main.py",
 					"conf": {
 						"spark.dynamicAllocation.enabled": "false",
 						"spark.dynamicAllocation.minExecutors": "1",
@@ -1302,7 +1300,7 @@
 					"args": [],
 					"jars": [],
 					"files": [
-						"abfss://spark-jobs@synhnsbh6em7.dfs.core.windows.net/pool_geolocation/src/utils.py"
+						"abfss://spark-jobs@synhnsbh6em7.dfs.core.usgovcloudapi.net/pool_geolocation/src/utils.py"
 					],
 					"driverMemory": "56g",
 					"driverCores": 8,
@@ -1326,7 +1324,7 @@
 				"language": "python",
 				"jobProperties": {
 					"name": "Transforms",
-					"file": "abfss://spark-jobs@synhnsbh6em7.dfs.core.windows.net/customvision_transform/src/main.py",
+					"file": "abfss://spark-jobs@synhnsbh6em7.dfs.core.usgovcloudapi.net/customvision_transform/src/main.py",
 					"conf": {
 						"spark.dynamicAllocation.enabled": "false",
 						"spark.dynamicAllocation.minExecutors": "1",

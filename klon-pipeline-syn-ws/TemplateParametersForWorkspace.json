@@ -34,6 +34,9 @@
 		},
 		"klon-pipeline-syn-ws-WorkspaceDefaultStorage_properties_typeProperties_url": {
 			"value": "https://synhnsusnqsi.dfs.core.usgovcloudapi.net/"
+		},
+		"kntestkv_properties_typeProperties_baseUrl": {
+			"value": "https://klon-kv.vault.usgovcloudapi.net/"
 		}
 	}
 }

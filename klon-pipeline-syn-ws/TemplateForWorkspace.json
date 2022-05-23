@@ -46,10 +46,6 @@
 		"klon-pipeline-syn-ws-WorkspaceDefaultStorage_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://synhnsusnqsi.dfs.core.usgovcloudapi.net/"
-		},
-		"kntestkv_properties_typeProperties_baseUrl": {
-			"type": "string",
-			"defaultValue": "https://klon-kv.vault.usgovcloudapi.net/"
 		}
 	},
 	"variables": {
@@ -1187,19 +1183,6 @@
 			"dependsOn": [
 				"[concat(variables('workspaceId'), '/integrationRuntimes/AutoResolveIntegrationRuntime')]"
 			]
-		},
-		{
-			"name": "[concat(parameters('workspaceName'), '/kntestkv')]",
-			"type": "Microsoft.Synapse/workspaces/linkedServices",
-			"apiVersion": "2019-06-01-preview",
-			"properties": {
-				"annotations": [],
-				"type": "AzureKeyVault",
-				"typeProperties": {
-					"baseUrl": "[parameters('kntestkv_properties_typeProperties_baseUrl')]"
-				}
-			},
-			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('workspaceName'), '/AutoResolveIntegrationRuntime')]",

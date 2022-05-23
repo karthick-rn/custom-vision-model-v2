@@ -4,7 +4,7 @@
         "annotations": [],
         "type": "AzureBlobStorage",
         "typeProperties": {
-            "connectionString": "DefaultEndpointsProtocol=https;AccountName=batchacc7jcrha;EndpointSuffix=core.usgovcloudapi.net;",
+            "connectionString": "DefaultEndpointsProtocol=https;AccountName=batchacc7jcrha;EndpointSuffix=core.usgovcloudapi.net/secrets;",
             "accountKey": {
                 "type": "AzureKeyVaultSecret",
                 "store": {

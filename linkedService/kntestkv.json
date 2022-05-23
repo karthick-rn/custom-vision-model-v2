@@ -1,0 +1,10 @@
+{
+	"name": "kntestkv",
+	"properties": {
+		"annotations": [],
+		"type": "AzureKeyVault",
+		"typeProperties": {
+			"baseUrl": "https://klon-kv.vault.usgovcloudapi.net/"
+		}
+	}
+}

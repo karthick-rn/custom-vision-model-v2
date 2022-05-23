@@ -195,7 +195,7 @@
 										"headers": {},
 										"authentication": {
 											"type": "MSI",
-											"resource": "https://batch.core.windows.net/"
+											"resource": "https://batch.core.usgovcloudapi.net/"
 										}
 									}
 								},
@@ -287,7 +287,7 @@
 							},
 							"authentication": {
 								"type": "MSI",
-								"resource": "https://batch.core.windows.net/"
+								"resource": "https://batch.core.usgovcloudapi.net/"
 							}
 						}
 					},
@@ -818,28 +818,22 @@
 				},
 				"parameters": {
 					"Prefix": {
-						"type": "string",
-						"defaultValue": "klontest"
+						"type": "string"
 					},
 					"StorageAccountName": {
-						"type": "string",
-						"defaultValue": "rawdataz7s65b"
+						"type": "string"
 					},
 					"AOI": {
-						"type": "string",
-						"defaultValue": "-117.063550 32.749467 -116.999386 32.812946"
+						"type": "string"
 					},
 					"BatchAccountName": {
-						"type": "string",
-						"defaultValue": "klonorcbatchact"
+						"type": "string"
 					},
 					"BatchJobName": {
-						"type": "string",
-						"defaultValue": "custom-vision-model-job"
+						"type": "string"
 					},
 					"BatchLocation": {
-						"type": "string",
-						"defaultValue": "usgovvirginia"
+						"type": "string"
 					}
 				},
 				"variables": {

@@ -1,0 +1,39 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"workspaceName": {
+			"value": "knsyn-pipeline-syn-ws"
+		},
+		"AOI Batch Storage_connectionString": {
+			"value": ""
+		},
+		"AOI Data Storage Account v2_connectionString": {
+			"value": ""
+		},
+		"AOI Geospatial v2 FS_connectionString": {
+			"value": ""
+		},
+		"knsyn-pipeline-syn-ws-WorkspaceDefaultSqlServer_connectionString": {
+			"value": ""
+		},
+		"AOI Batch_properties_typeProperties_batchUri": {
+			"value": "https://knsynorcbatchact.usgovvirginia.usgovcloudapi.net"
+		},
+		"AOI Batch_properties_typeProperties_poolName": {
+			"value": "data-cpu-pool"
+		},
+		"AOI Batch_properties_typeProperties_accountName": {
+			"value": "knsynorcbatchact"
+		},
+		"AOI Geospatial v2_properties_typeProperties_url": {
+			"value": "https://rawdatalgi34v.dfs.core.usgovcloudapi.net"
+		},
+		"AOI Pipeline Key Vault_properties_typeProperties_baseUrl": {
+			"value": "https://knsyn-pipeline-kv.vault.usgovcloudapi.net/"
+		},
+		"knsyn-pipeline-syn-ws-WorkspaceDefaultStorage_properties_typeProperties_url": {
+			"value": "https://synhnshzfmim.dfs.core.usgovcloudapi.net/"
+		}
+	}
+}

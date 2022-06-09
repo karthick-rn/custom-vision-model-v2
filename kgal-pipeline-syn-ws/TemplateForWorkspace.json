@@ -41,7 +41,7 @@
 		},
 		"AOI Pipeline Key Vault_properties_typeProperties_baseUrl": {
 			"type": "string",
-			"defaultValue": "https://kgal-orc-kv.vault.azure.net/"
+			"defaultValue": "https://kgal-pipeline-kv.vault.azure.net/"
 		},
 		"kgal-pipeline-syn-ws-WorkspaceDefaultStorage_properties_typeProperties_url": {
 			"type": "string",

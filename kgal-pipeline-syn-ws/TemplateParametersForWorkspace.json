@@ -30,7 +30,7 @@
 			"value": "https://rawdataxyza3k.dfs.core.windows.net"
 		},
 		"AOI Pipeline Key Vault_properties_typeProperties_baseUrl": {
-			"value": "https://kgal-orc-kv.vault.azure.net/"
+			"value": "https://kgal-pipeline-kv.vault.azure.net/"
 		},
 		"kgal-pipeline-syn-ws-WorkspaceDefaultStorage_properties_typeProperties_url": {
 			"value": "https://synhnsdoaxah.dfs.core.windows.net/"

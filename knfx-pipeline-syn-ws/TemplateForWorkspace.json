@@ -82,7 +82,7 @@
 								"--storage_container",
 								"@pipeline().parameters.Prefix",
 								"--key_vault_name",
-								"knfx-pipeline-kv",
+								"knfx-pipeline-kv.vault.usgovcloudapi.net",
 								"--storage_account_key_secret_name",
 								"GeospatialStorageAccountKey",
 								"--linked_service_name",
@@ -348,7 +348,7 @@
 								"--src_folder_name",
 								"detections",
 								"--key_vault_name",
-								"knfx-pipeline-kv",
+								"knfx-pipeline-kv.vault.usgovcloudapi.net",
 								"--storage_account_key_secret_name",
 								"GeospatialStorageAccountKey",
 								"--linked_service_name",
@@ -1203,16 +1203,20 @@
 						"defaultValue": "rawdata6bpbeg"
 					},
 					"AOI": {
-						"type": "string"
+						"type": "string",
+						"defaultValue": "-117.063550 32.749467 -116.999386 32.812946"
 					},
 					"BatchAccountName": {
-						"type": "string"
+						"type": "string",
+						"defaultValue": "knfxorcbatchact"
 					},
 					"BatchJobName": {
-						"type": "string"
+						"type": "string",
+						"defaultValue": "knfx-data-cpu-pool"
 					},
 					"BatchLocation": {
-						"type": "string"
+						"type": "string",
+						"defaultValue": "usgovvirginia"
 					}
 				},
 				"variables": {

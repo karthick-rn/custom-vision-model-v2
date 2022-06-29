@@ -18,7 +18,7 @@
 			"value": ""
 		},
 		"AOI Batch_properties_typeProperties_batchUri": {
-			"value": "https://knfxorcbatchact.usgovvirginia.batch.azure.com"
+			"value": "https://knfxorcbatchact.usgovvirginia.batch.usgovcloudapi.com"
 		},
 		"AOI Batch_properties_typeProperties_poolName": {
 			"value": "data-cpu-pool"

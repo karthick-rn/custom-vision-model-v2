@@ -25,7 +25,7 @@
 		},
 		"AOI Batch_properties_typeProperties_batchUri": {
 			"type": "string",
-			"defaultValue": "https://knfxorcbatchact.usgovvirginia.batch.azure.com"
+			"defaultValue": "https://knfxorcbatchact.usgovvirginia.batch.usgovcloudapi.com"
 		},
 		"AOI Batch_properties_typeProperties_poolName": {
 			"type": "string",

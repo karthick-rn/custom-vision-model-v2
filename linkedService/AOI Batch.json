@@ -4,7 +4,7 @@
         "annotations": [],
         "type": "AzureBatch",
         "typeProperties": {
-            "batchUri": "https://knfxorcbatchact.usgovvirginia.batch.azure.com",
+            "batchUri": "https://knfxorcbatchact.usgovvirginia.batch.usgovcloudapi.com",
             "poolName": "data-cpu-pool",
             "accountName": "knfxorcbatchact",
             "linkedServiceName": {

@@ -50,7 +50,7 @@
 							"userProperties": [],
 							"typeProperties": {
 								"url": {
-									"value": "@concat('https://',pipeline().parameters.BatchName,'.',pipeline().parameters.BatchLocation,'.batch.azure.com/jobs/',pipeline().parameters.JobName,'/tasks/aoi-cv-task-', pipeline().RunId, '?api-version=2022-01-01.15.0')",
+									"value": "@concat('https://',pipeline().parameters.BatchName,'.',pipeline().parameters.BatchLocation,'.batch.usgovcloudapi.com/jobs/',pipeline().parameters.JobName,'/tasks/aoi-cv-task-', pipeline().RunId, '?api-version=2022-01-01.15.0')",
 									"type": "Expression"
 								},
 								"connectVia": {
@@ -153,7 +153,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"url": {
-						"value": "@concat('https://',pipeline().parameters.BatchName,'.',pipeline().parameters.BatchLocation,'.batch.azure.com/jobs/',pipeline().parameters.JobName,'/tasks?api-version=2020-03-01.11.0')",
+						"value": "@concat('https://',pipeline().parameters.BatchName,'.',pipeline().parameters.BatchLocation,'.batch.usgovcloudapi.com/jobs/',pipeline().parameters.JobName,'/tasks?api-version=2020-03-01.11.0')",
 						"type": "Expression"
 					},
 					"connectVia": {

@@ -26,6 +26,14 @@
 						"AOI": {
 							"value": "@pipeline().parameters.AOI",
 							"type": "Expression"
+						},
+						"SparkPoolName": {
+							"value": "@pipeline().parameters.SparkPoolName",
+							"type": "Expression"
+						},
+						"EnvCode": {
+							"value": "@pipeline().parameters.EnvCode",
+							"type": "Expression"
 						}
 					}
 				}
@@ -67,6 +75,14 @@
 						},
 						"StorageAccountName": {
 							"value": "@pipeline().parameters.StorageAccountName",
+							"type": "Expression"
+						},
+						"SparkPoolName": {
+							"value": "@pipeline().parameters.SparkPoolName",
+							"type": "Expression"
+						},
+						"EnvCode": {
+							"value": "@pipeline().parameters.EnvCode",
 							"type": "Expression"
 						}
 					}

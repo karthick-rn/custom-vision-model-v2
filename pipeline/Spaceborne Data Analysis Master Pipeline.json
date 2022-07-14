@@ -1,110 +1,114 @@
 {
-          "name": "E2E Custom Vision Model Flow",
-          "properties": {
-                    "activities": [
-                              {
-                                        "name": "Transforms",
-                                        "type": "ExecutePipeline",
-                                        "dependsOn": [],
-                                        "userProperties": [],
-                                        "typeProperties": {
-                                                  "pipeline": {
-                                                            "referenceName": "Custom Vision Model Transforms v2",
-                                                            "type": "PipelineReference"
-                                                  },
-                                                  "waitOnCompletion": true,
-                                                  "parameters": {
-                                                            "Prefix": {
-                                                                      "value": "@pipeline().parameters.Prefix",
-                                                                      "type": "Expression"
-                                                            },
-                                                            "StorageAccountName": {
-                                                                      "value": "@pipeline().parameters.StorageAccountName",
-                                                                      "type": "Expression"
-                                                            },
-                                                            "AOI": {
-                                                                      "value": "@pipeline().parameters.AOI",
-                                                                      "type": "Expression"
-                                                            }
-                                                  }
-                                        }
-                              },
-                              {
-                                        "name": "Custom Vision Object Detection",
-                                        "type": "ExecutePipeline",
-                                        "dependsOn": [
-                                                  {
-                                                            "activity": "Transforms",
-                                                            "dependencyConditions": [
-                                                                      "Succeeded"
-                                                            ]
-                                                  }
-                                        ],
-                                        "userProperties": [],
-                                        "typeProperties": {
-                                                  "pipeline": {
-                                                            "referenceName": "Custom Vision Object Detection v2",
-                                                            "type": "PipelineReference"
-                                                  },
-                                                  "waitOnCompletion": true,
-                                                  "parameters": {
-                                                            "Prefix": {
-                                                                      "value": "@pipeline().parameters.Prefix",
-                                                                      "type": "Expression"
-                                                            },
-                                                            "BatchName": {
-                                                                      "value": "@pipeline().parameters.BatchAccountName",
-                                                                      "type": "Expression"
-                                                            },
-                                                            "JobName": {
-                                                                      "value": "@pipeline().parameters.BatchJobName",
-                                                                      "type": "Expression"
-                                                            },
-                                                            "BatchLocation": {
-                                                                      "value": "@pipeline().parameters.BatchLocation",
-                                                                      "type": "Expression"
-                                                            },
-                                                            "StorageAccountName": {
-                                                                      "value": "@pipeline().parameters.StorageAccountName",
-                                                                      "type": "Expression"
-                                                            }
-                                                  }
-                                        }
-                              }
-                    ],
-                    "parameters": {
-                              "Prefix": {
-                                        "type": "string",
-                                        "defaultValue": ""
-                              },
-                              "StorageAccountName": {
-                                        "type": "string",
-                                        "defaultValue": ""
-                              },
-                              "AOI": {
-                                        "type": "string",
-                                        "defaultValue": ""
-                              },
-                              "BatchAccountName": {
-                                        "type": "string",
-                                        "defaultValue": ""
-                              },
-                              "BatchJobName": {
-                                        "type": "string",
-                                        "defaultValue": ""
-                              },
-                              "BatchLocation": {
-                                        "type": "string",
-                                        "defaultValue": ""
-                              }
-                    },
-                    "variables": {
-                              "Storage_Account_Conn_String": {
-                                        "type": "String"
-                              }
-                    },
-                    "annotations": [],
-                    "lastPublishTime": "2022-03-06T05:42:39Z"
-          },
-          "type": "Microsoft.Synapse/workspaces/pipelines"
+	"name": "Spaceborne Data Analysis Master Pipeline",
+	"properties": {
+		"description": "The pipeline template takes GeoTIFF images as input, runs Geospatial Analysis using Azure Synapse Analytics and produces GeoJSON output that can be consumed for further analysis. \n\nWe recommend you read the documentation below before deploying the template and sample solution. \n\nSpaceborne data analysis using Azure Synapse Analytics: \nhttps://aka.ms/synapse-geospatial-analytics\n\nAzure Orbital Analytics Samples:\nhttps://aka.ms/AOARefArchCodeSamples",
+		"activities": [
+			{
+				"name": "Transforms",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "Custom Vision Model Transforms v2",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true,
+					"parameters": {
+						"Prefix": {
+							"value": "@pipeline().parameters.Prefix",
+							"type": "Expression"
+						},
+						"StorageAccountName": {
+							"value": "@pipeline().parameters.StorageAccountName",
+							"type": "Expression"
+						},
+						"AOI": {
+							"value": "@pipeline().parameters.AOI",
+							"type": "Expression"
+						}
+					}
+				}
+			},
+			{
+				"name": "Custom Vision Object Detection",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "Transforms",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "Custom Vision Object Detection v2",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true,
+					"parameters": {
+						"Prefix": {
+							"value": "@pipeline().parameters.Prefix",
+							"type": "Expression"
+						},
+						"BatchName": {
+							"value": "@pipeline().parameters.BatchAccountName",
+							"type": "Expression"
+						},
+						"JobName": {
+							"value": "@pipeline().parameters.BatchJobName",
+							"type": "Expression"
+						},
+						"BatchLocation": {
+							"value": "@pipeline().parameters.BatchLocation",
+							"type": "Expression"
+						},
+						"StorageAccountName": {
+							"value": "@pipeline().parameters.StorageAccountName",
+							"type": "Expression"
+						}
+					}
+				}
+			}
+		],
+		"parameters": {
+			"Prefix": {
+				"type": "string"
+			},
+			"StorageAccountName": {
+				"type": "string"
+			},
+			"AOI": {
+				"type": "string"
+			},
+			"BatchAccountName": {
+				"type": "string"
+			},
+			"BatchJobName": {
+				"type": "string"
+			},
+			"BatchLocation": {
+				"type": "string"
+			},
+			"SparkPoolName": {
+				"type": "string"
+			},
+			"EnvCode": {
+				"type": "string"
+			}
+		},
+		"variables": {
+			"Storage_Account_Conn_String": {
+				"type": "String"
+			}
+		},
+		"folder": {
+			"name": "Spaceborne Data Analysis Pipelines"
+		},
+		"annotations": [],
+		"lastPublishTime": "2022-03-06T05:42:39Z"
+	},
+	"type": "Microsoft.Synapse/workspaces/pipelines"
 }

@@ -120,7 +120,16 @@
 					},
 					"AOI": {
 						"type": "string"
+					},
+					"SparkPoolName": {
+						"type": "string"
+					},
+					"EnvCode": {
+						"type": "string"
 					}
+				},
+				"folder": {
+					"name": "Spaceborne Data Analysis Pipelines"
 				},
 				"annotations": [],
 				"lastPublishTime": "2022-03-06T06:06:58Z"
@@ -339,7 +348,7 @@
 								"referenceName": "Pool Geolocation",
 								"type": "SparkJobDefinitionReference"
 							},
-							"file": "abfss://spark-jobs@synhnszq3azl.dfs.core.windows.net/pool_geolocation/src/main.py",
+							"file": "https://raw.githubusercontent.com/Azure/Azure-Orbital-Analytics-Samples/main/src/transforms/spark-jobs/pool_geolocation/src/main.py",
 							"args": [
 								"--storage_account_name",
 								"@pipeline().parameters.StorageAccountName",
@@ -348,7 +357,7 @@
 								"--src_folder_name",
 								"detections",
 								"--key_vault_name",
-								"knf1-pipeline-kv",
+								"@concat(pipeline().parameters.EnvCode,'-pipeline-kv')",
 								"--storage_account_key_secret_name",
 								"GeospatialStorageAccountKey",
 								"--linked_service_name",
@@ -1001,6 +1010,12 @@
 					},
 					"StorageAccountName": {
 						"type": "string"
+					},
+					"SparkPoolName": {
+						"type": "string"
+					},
+					"EnvCode": {
+						"type": "string"
 					}
 				},
 				"variables": {
@@ -1010,6 +1025,9 @@
 					"FunctionError": {
 						"type": "String"
 					}
+				},
+				"folder": {
+					"name": "Spaceborne Data Analysis Pipelines"
 				},
 				"annotations": [],
 				"lastPublishTime": "2022-03-06T05:52:44Z"
@@ -1027,10 +1045,11 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('workspaceName'), '/E2E Custom Vision Model Flow')]",
+			"name": "[concat(parameters('workspaceName'), '/Spaceborne Data Analysis Master Pipeline')]",
 			"type": "Microsoft.Synapse/workspaces/pipelines",
 			"apiVersion": "2019-06-01-preview",
 			"properties": {
+				"description": "The pipeline template takes GeoTIFF images as input, runs Geospatial Analysis using Azure Synapse Analytics and produces GeoJSON output that can be consumed for further analysis. \n\nWe recommend you read the documentation below before deploying the template and sample solution. \n\nSpaceborne data analysis using Azure Synapse Analytics: \nhttps://aka.ms/synapse-geospatial-analytics\n\nAzure Orbital Analytics Samples:\nhttps://aka.ms/AOARefArchCodeSamples",
 				"activities": [
 					{
 						"name": "Transforms",
@@ -1124,12 +1143,21 @@
 					},
 					"BatchLocation": {
 						"type": "string"
+					},
+					"SparkPoolName": {
+						"type": "string"
+					},
+					"EnvCode": {
+						"type": "string"
 					}
 				},
 				"variables": {
 					"Storage_Account_Conn_String": {
 						"type": "String"
 					}
+				},
+				"folder": {
+					"name": "Spaceborne Data Analysis Pipelines"
 				},
 				"annotations": [],
 				"lastPublishTime": "2022-03-06T05:42:39Z"
